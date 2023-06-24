@@ -1,0 +1,142 @@
+<html>
+  <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" href="mqtt-icon-16.png">
+        <title>iMQTT</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;padding-top: 10;">MQTT Connect</h1>
+      
+    <h2>Connection</h2>
+    <div class="flex-container" >
+            <div class="flex-item">
+                <h3>Host</h3>
+                <input type="text" name="host" placeholder="Host"  />
+                <span class="error" id="host_error"></span>
+            </div>
+            <div class="flex-item">
+                <h3>Port</h3>
+                <input type="number" name="port" min="1" max="65535" />
+                <span class="error" id="port_error"></span>                
+            </div>
+            <div class="flex-item">
+                <h3>Client ID</h3>
+                <input type="text" name="client_id" placeholder="Client ID" pattern="[a-zA-Z0-9-_]+" />
+                <span class="error" id="client_id_error"></span>
+            </div>
+            <div class="flex-item">
+                <h3>Username</h3>
+                <input type="text" name="username" placeholder="Username" />
+                <span class="error" id="username_error"></span>
+            </div>
+            <div class="flex-item">
+                <h3>Password</h3>
+                <input type="password" name="password" placeholder="Password" />
+                <span class="error" id="password_error"></span>
+            </div>  
+    
+        <div class="flex-item">
+            <h3>Keep Alive</h3> 
+            <input type="number" name="keep_alive" min="0" max="60" pattern="[0-9]+"/>
+            <span class="error" id="keep_alive_error"></span>
+        </div>
+        <div class="flex-item">
+            <h3>SSL</h3>
+            <input type="checkbox" name="ssl" />
+        </div>
+        <div class="flex-item">
+            <h3>Clean Session</h3>
+            <input type="checkbox" name="clean_session" />
+        </div>
+        <div class="flex-item">
+            <h3>Last-Will Topic</h3>
+            <input type="text" name="last_will_topic" placeholder="Last Will Topic" pattern="[a-zA-Z0-9-_]+/#" />
+            <span class="error" id="last_will_topic_error"></span>
+        </div>
+        <div class="flex-item">
+            <h3>Last-Will QoS</h3>
+            <select name="QoS_level">
+                <option value="Level0">0</option>
+                <option value="Level1">1</option>
+                <option value="Level2">2</option>
+            </select>
+        </div>
+        <div class="flex-item">
+            <h3>Last-Will Retain</h3>
+            <input type="checkbox" name="last_will_retain" />
+        </div>
+        <div class="flex-item">
+            <h3>Last-Will Messsage</h3>
+            <input type="text" name="last_will_message" placeholder="Last Will Message" />
+            <span class="error" id="last_will_message_error"></span>
+        </div>
+
+    </div>    
+
+
+        <button type="button" id="connect_button">Connect</button>
+        <br>
+
+        <h2>Publish</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>Topic</h3>
+                <input type="text" name="topic" placeholder="Topic" pattern="[a-zA-Z0-9-_]+/#" />
+                <span class="error" id="topic_error"></span>
+            </div>
+            <div class="flex-item">
+                <h3>QoS</h3>
+                <select name="QoS_level">
+                    <option value="Level0">0</option>
+                    <option value="Level1">1</option>
+                    <option value="Level2">2</option>
+                </select>
+            </div>
+            <div class="flex-item">
+                <h3>Retain</h3>
+                <input type="checkbox" name="retain" />
+            </div>
+            <div class="flex-item">
+                <h3>Message</h3>
+                <input type="text" name="message" placeholder="Message" />
+                <span class="error" id="message_error"></span>
+            </div>
+        </div>
+
+        <button type="button" id="publish_button">Publish</button>
+
+        <br>
+
+        <h2>Subscription</h2>
+
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>Color</h3>
+                <input type="text" name="color" placeholder="Color" />
+                <span class="error" id="color_error"></span>
+            </div>
+            <div class="flex-item">
+                <h3>QoS</h3>
+                <select name="QoS_level">
+                    <option value="Level0">0</option>
+                    <option value="Level1">1</option>
+                    <option value="Level2">2</option>
+                </select>
+            </div>
+            <div class="flex-item">
+                <h3>Topic</h3>
+                <input type="text" name="topic" placeholder="Topic" pattern="[a-zA-Z0-9-_]+/#" />
+                <span class="error" id="topic_error"></span>
+            </div>
+        </div>
+
+        <button type="button" id="subscribe_button">Subscribe</button>
+        <br>
+
+        <h2 style="text-align: center">Messages</h2>
+           
+  </body>
+  <script type="module" src="./mqttfun.js"></script>
+  <script type="module" src="./validation.js"></script>
+  
+</html>

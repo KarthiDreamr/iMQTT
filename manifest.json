@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "iMQTT",
+    "description": "MQTT Extension can be used to connect to MQTT brokers and publish/subscribe to topics.",
+    "version": "1.0",
+    "permissions": [
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "iMQTT",
+        "default_icon": {
+            "16": "mqtt-icon-16.png",
+            "32": "mqtt-icon-128.png",
+            "48": "mqtt-icon-48.png",
+            "128": "mqtt-icon-128.png"
+        }
+    }
+}
