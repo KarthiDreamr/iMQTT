@@ -20,15 +20,20 @@
             <div class="flex-item">
                 <h3>Host</h3>
                 <select name="protocol">
-                    <option value="tcp://">tcp://</option>
-                    <option value="ssl://">ssl://</option>
                     <option value="ws://">ws://</option>
                     <option value="wss://">wss://</option>
-                    <option value="amqp://">amqp://</option>
+                    <option value="mqtt://">mqtt://</option>
+                    <option value="mqtts://">mqtts://</option>
+                
+                    <!-- <option value="tcp://">tcp://</option>
+                    <option value="ssl://">ssl://</option> -->
+                    <!-- <option value="wss://">wss://</option> -->
+                    <!-- <option value="amqp://">amqp://</option>
                     <option value="amqps://">amqps://</option>
                     <option value="coap://">coap://</option>
                     <option value="coaps://">coaps://</option>
-                    <option value="dds://">dds://</option>
+                    <option value="dds://">dds://</option> -->
+
                 </select>
                 <input type="text" name="host" placeholder="Host"  />
                 <span class="error" id="host_error"></span>
